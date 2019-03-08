@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml"
+             relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151126114337_added_entity_Elu.xml"
+             relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151201164054_added_entity_AdressePostale.xml"
+             relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151202102839_changelog.xml"/>
+    <include file="classpath:config/liquibase/changelog/20151203080001_added_entity_AdresseMail.xml"
+             relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203080001_added_entity_IdentiteInternet.xml"
+             relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203080001_added_entity_NumeroFax.xml"
+             relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203080001_added_entity_NumeroTelephone.xml"
+             relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203081740_changelog.xml"/>
+    <include file="classpath:config/liquibase/changelog/20151203192830_changelog.xml"/>
+    <include file="classpath:config/liquibase/changelog/20151204111818_added_entity_GroupePolitique.xml"
+             relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151207132440_added_entity_FonctionCommissionPermanente.xml"
+             relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151207134300_added_entity_FonctionExecutive.xml"
+             relativeToChangelogFile="false"/>
+    <include
+        file="classpath:config/liquibase/changelog/20151207134351_added_entity_AppartenanceCommissionPermanente.xml"
+        relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151211132440_added_entity_FonctionGroupePolitique.xml"
+             relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151211134351_added_entity_AppartenanceGroupePolitique.xml"
+             relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151204111818_added_entity_CommissionThematique.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151211134351_added_entity_AppartenanceCommissionThematique.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151211132440_added_entity_FonctionCommissionThematique.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151213134351_added_images.xml"
+             relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151204111818_added_entity_Organisme.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151211134351_added_entity_AppartenanceOrganisme.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160804111818_added_entity_Seance.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160910111818_added_entity_Pouvoir.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160911081740_added_entity_AuditTrail.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170109170820_added_entity_PresenceElu.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170109170548_added_entity_Signature.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170110081740_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170111125358_added_entity_ReunionCommissionThematique.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170111181740_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170111181840_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170111185358_added_entity_ReunionCao.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170111185359_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170112140152_added_entity_AutreMandat.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170701140152_added_entity_DistinctionHonorifique.xml" relativeToChangelogFile="false"/>
+    <!-- JHipster will add liquibase changelogs here -->
+</databaseChangeLog>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: openassemblee
+Implementation-Version: 1.0-SNAPSHOT
+Archiver-Version: Plexus Archiver
+Built-By: mlo
+Implementation-Vendor-Id: openassemblee
+Created-By: Apache Maven 3.6.0
+Build-Jdk: 1.8.0_152
+Implementation-Vendor: Pivotal Software, Inc.
+

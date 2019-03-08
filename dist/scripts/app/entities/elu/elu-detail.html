@@ -1,0 +1,149 @@
+<div>
+    <section class="content">
+        <div class="container">
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <div class="info-box title-box title-box-elu">
+                    <div class="info-box-content-elu">
+                        <h1>
+                            {{dto.elu.civilite | civilite}} {{dto.elu.prenom}} {{dto.elu.nom}}
+                        </h1>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <div class="info-box-content-elu">
+                        <span class="info-box-info-elu">
+                            <div>
+                                <span class="lg">{{dto.elu.civilite | neOuNee}} le</span> {{dto.elu.dateNaissance}}
+                                <span class="lg">à</span> {{dto.elu.lieuNaissance}}
+                            </div>
+                            <div ng-if="dto.elu.nomJeuneFille">
+                                <span class="lg">Nom de jeune fille</span> {{dto.elu.nomJeuneFille}}
+                            </div>
+                            <div>
+                                <span class="lg">Profession</span> {{dto.elu.profession}}
+                            </div>
+                            <div>
+                                <span class="lg">Département</span> {{dto.elu.departement}}
+                            </div>
+                            <div ng-if="dto.elu.dateDemission || dto.elu.motifDemission">
+                                <span class="lg">Élu non actif, cause :</span> {{dto.elu.motifDemission}}
+                                <span class="lg">depuis le</span> {{dto.elu.dateDemission | date:'mediumDate'}}
+                            </div>
+                            <br />
+                            <div ng-repeat="f in dto.elu.fonctionsCommissionPermanente"
+                                  ng-if="f.dateFin == null">
+                                <div class="action-bloc"
+                                     ui-sref="elu.detail.finFonctionCommissionPermanente({fonctionId: f.id})">
+                                    <span class="grey">Fonction :</span> {{f.fonction}}
+                                    <span class="grey">depuis le</span> {{f.dateDebut}}
+                                </div>
+                            </div>
+                            <div ng-repeat="f in dto.elu.fonctionsExecutives"
+                                 ng-if="f.dateFin == null">
+                                <div class="action-bloc"
+                                     ui-sref="elu.detail.finFonctionExecutive({fonctionId: f.id})">
+                                    <span class="grey">Fonction exécutive :</span> {{f.fonction}}
+                                    <span class="grey">depuis le</span> {{f.dateDebut}}
+                                </div>
+                            </div>
+                            <br/>
+                            <div ng-repeat="d in dto.elu.distinctionHonorifiques">
+                                <div class="action-bloc"
+                                     ui-sref="elu.detail.editionDistinctionHonorifique({distinctionHonorifiqueId: d.id})">
+                                    <span class="lg">Titre :</span> {{d.titre}}
+                                    <br/>
+                                    <span class="lg">Date :</span> {{d.date}}
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+                            </div>
+                        </span>
+                        <div class="btn-group elu-action">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right">
+                                <li has-authority="ROLE_ADMIN">
+                                    <a href="#" ui-sref="elu.edit({id:dto.elu.id})">
+                                        <span class="fa fa-pencil"></span>
+                                        Éditer
+                                    </a>
+                                </li>
+                                <li has-authority="ROLE_ADMIN">
+                                    <a href="#"
+                                       ui-sref="elu.detail.nouvelleFonctionCommissionPermanente">
+                                        Ajouter une fonction (délégué etc.)
+                                    </a>
+                                </li>
+                                <li has-authority="ROLE_ADMIN">
+                                    <a href="#"
+                                       ui-sref="elu.detail.nouvelleFonctionExecutive">
+                                        Ajouter une fonction exécutive
+                                    </a>
+                                </li>
+                                <li has-authority="ROLE_ADMIN">
+                                    <a href="#"
+                                       ui-sref="elu.detail.ajoutDistinctionHonorifique">
+                                        Ajouter une distinction honorifique
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" ng-href="api/elus/{{dto.elu.id}}/export">
+                                        <span class="fa fa-table"></span>
+                                        <span>Export Excel</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <groupes-politiques></groupes-politiques>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="info-box">
+                    <div class="info-box-photo-big">
+                        <img ng-if="dto.elu.image" ng-src="images/{{dto.elu.image}}" ui-sref="elu.detail.uploadImage"/>
+                        <button ng-if="dto.elu.image == null" class="btn btn-sm btn-primary"
+                                ui-sref="elu.detail.uploadImage"
+                                has-authority="ROLE_ADMIN">
+                            Ajouter une image
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 row">
+                <commission-permanente></commission-permanente>
+
+                <commissions-thematiques></commissions-thematiques>
+            </div>
+
+            <div class="col-md-12 row">
+                <organismes></organismes>
+
+                <autres-mandats></autres-mandats>
+            </div>
+
+            <div class="col-md-12 row">
+                <adresses-postales></adresses-postales>
+
+                <numeros-telephone></numeros-telephone>
+            </div>
+
+            <div class="col-md-12 row">
+                <numeros-fax></numeros-fax>
+
+                <adresses-mail></adresses-mail>
+            </div>
+
+            <div class="col-md-12 row">
+                <identites-internet></identites-internet>
+            </div>
+
+            <div class="col-md-12">
+                <vie-politique-passee></vie-politique-passee>
+            </div>
+        </div>
+    </section>
+</div>

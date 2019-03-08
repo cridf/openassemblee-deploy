@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SIGER</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="adminlte/skins/_all-skins.min.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="adminlte/AdminLTE.min.css">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css assets/styles/vendor.css -->
+    <!-- endbuild -->
+    <!-- build:css assets/styles/main.css -->
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <!-- endbuild -->
+    <!-- build:css assets/styles/openassemblee.css -->
+    <link rel="stylesheet" href="assets/styles/openassemblee.css">
+    <!-- endbuild -->
+    <!-- build:css assets/styles/typeahead.css -->
+    <link rel="stylesheet" href="assets/styles/typeahead.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="styles/json-formatter.min.css">
+    <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper" ng-app="openassembleeApp">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="#/" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>B</b>2</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>SIGER</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- =============================================== -->
+
+    <!-- Left side column. contains the sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- search form -->
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search..." ng-model="searchToken">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+                </div>
+            </form>
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <div ui-view="navbar" ng-cloak></div>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- =============================================== -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <div ui-view="content" ng-cloak></div>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 0.0.5
+        </div>
+        <strong>Conseil Régional Île de France</strong>
+    </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/modernizr/modernizr.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+<script src="bower_components/json3/lib/json3.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+<script src="bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
+<script src="bower_components/angular-typeahead/angular-typeahead.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/angular-strap/dist/angular-strap.js"></script>
+<script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+<script src="bower_components/json-formatter/dist/json-formatter.js"></script>
+<script src="bower_components/angular-ui-select/dist/select.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+<script src="bower_components/angular-i18n/angular-locale_fr-fr.js"></script>
+
+<!-- AdminLTE App -->
+<script src="adminlte/app.js"></script>
+
+<!-- build:js({.tmp,src/main/webapp}) scripts/app.js -->
+<script src="scripts/app/utils.js"></script>
+<script src="scripts/app/app.js"></script>
+<script src="scripts/app/app.constants.js"></script>
+<script src="scripts/app/app.autocomplete.js"></script>
+<script src="scripts/components/auth/auth.service.js"></script>
+<script src="scripts/components/auth/principal.service.js"></script>
+<script src="scripts/components/auth/authority.directive.js"></script>
+<script src="scripts/components/auth/services/account.service.js"></script>
+<script src="scripts/components/auth/services/activate.service.js"></script>
+<script src="scripts/components/auth/services/password.service.js"></script>
+<script src="scripts/components/auth/services/register.service.js"></script>
+<script src="scripts/components/form/form.directive.js"></script>
+<script src="scripts/components/form/maxbytes.directive.js"></script>
+<script src="scripts/components/form/minbytes.directive.js"></script>
+<script src="scripts/components/form/pager.directive.js"></script>
+<script src="scripts/components/form/pagination.directive.js"></script>
+<script src="scripts/components/admin/audits.service.js"></script>
+<script src="scripts/components/admin/logs.service.js"></script>
+<script src="scripts/components/admin/configuration.service.js"></script>
+<script src="scripts/components/admin/monitoring.service.js"></script>
+<script src="scripts/components/interceptor/auth.interceptor.js"></script>
+<script src="scripts/components/interceptor/errorhandler.interceptor.js"></script>
+<script src="scripts/components/interceptor/notification.interceptor.js"></script>
+<script src="scripts/components/navbar/navbar.directive.js"></script>
+<script src="scripts/components/navbar/navbar.controller.js"></script>
+<script src="scripts/components/user/user.service.js"></script>
+<script src="scripts/components/util/truncate.filter.js"></script>
+<script src="scripts/components/util/base64.service.js"></script>
+<script src="scripts/components/util/capitalize.filter.js"></script>
+<script src="scripts/components/alert/alert.service.js"></script>
+<script src="scripts/components/alert/alert.directive.js"></script>
+<script src="scripts/components/util/parse-links.service.js"></script>
+<script src="scripts/components/util/dateutil.service.js"></script>
+<script src="scripts/components/util/data-util.service.js"></script>
+<script src="scripts/app/account/account.js"></script>
+<script src="scripts/app/account/activate/activate.js"></script>
+<script src="scripts/app/account/activate/activate.controller.js"></script>
+<script src="scripts/app/account/login/login.js"></script>
+<script src="scripts/app/account/login/login.controller.js"></script>
+<script src="scripts/app/account/password/password.js"></script>
+<script src="scripts/app/account/password/password.controller.js"></script>
+<script src="scripts/app/account/password/password.directive.js"></script>
+<script src="scripts/app/account/register/register.js"></script>
+<script src="scripts/app/account/register/register.controller.js"></script>
+<script src="scripts/app/account/settings/settings.js"></script>
+<script src="scripts/app/account/settings/settings.controller.js"></script>
+<script src="scripts/app/account/reset/finish/reset.finish.controller.js"></script>
+<script src="scripts/app/account/reset/finish/reset.finish.js"></script>
+<script src="scripts/app/account/reset/request/reset.request.controller.js"></script>
+<script src="scripts/app/account/reset/request/reset.request.js"></script>
+<script src="scripts/app/admin/admin.js"></script>
+<script src="scripts/app/admin/audits/audits.js"></script>
+<script src="scripts/app/admin/audits/audits.controller.js"></script>
+<script src="scripts/app/admin/configuration/configuration.js"></script>
+<script src="scripts/app/admin/configuration/configuration.controller.js"></script>
+<script src="scripts/app/admin/health/health.js"></script>
+<script src="scripts/app/admin/health/health.controller.js"></script>
+<script src="scripts/app/admin/health/health.modal.controller.js"></script>
+<script src="scripts/app/admin/logs/logs.js"></script>
+<script src="scripts/app/admin/logs/logs.controller.js"></script>
+<script src="scripts/app/admin/metrics/metrics.js"></script>
+<script src="scripts/app/admin/metrics/metrics.controller.js"></script>
+<script src="scripts/app/admin/metrics/metrics.modal.controller.js"></script>
+<script src="scripts/app/admin/user-management/user-management-detail.controller.js"></script>
+<script src="scripts/app/admin/user-management/user-management-dialog.controller.js"></script>
+<script src="scripts/app/admin/user-management/user-management.controller.js"></script>
+<script src="scripts/app/admin/user-management/user-management.js"></script>
+<script src="scripts/app/error/error.js"></script>
+<script src="scripts/app/main/main.js"></script>
+<script src="scripts/app/main/main.controller.js"></script>
+<script src="scripts/components/auth/services/sessions.service.js"></script>
+<script src="scripts/components/auth/provider/auth.session.service.js"></script>
+<script src="scripts/app/account/sessions/sessions.js"></script>
+<script src="scripts/app/account/sessions/sessions.controller.js"></script>
+<script src="scripts/components/entities/elu/elu.service.js"></script>
+<script src="scripts/components/entities/elu/elu.search.service.js"></script>
+<script src="scripts/app/components/components.js"></script>
+<script src="scripts/app/entities/entity.js"></script>
+<script src="scripts/app/entities/groupePolitique/groupePolitique.js"></script>
+<script src="scripts/app/entities/groupePolitique/groupePolitique.controller.js"></script>
+<script src="scripts/app/entities/groupePolitique/groupePolitique-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/groupePolitique/groupePolitique-detail.controller.js"></script>
+<script src="scripts/app/entities/groupePolitique/groupePolitique-dialog.controller.js"></script>
+<script src="scripts/app/entities/groupePolitique/groupePolitique-edit-dialog.controller.js"></script>
+<script src="scripts/app/entities/groupePolitique/upload-image-dialog.controller.js"></script>
+<script src="scripts/components/entities/groupePolitique/groupePolitique.service.js"></script>
+<script src="scripts/components/entities/groupePolitique/groupePolitique.search.service.js"></script>
+<script src="scripts/app/commission-permanente/commission-permanente.js"></script>
+<script src="scripts/app/commission-permanente/commission-permanente.controller.js"></script>
+<script src="scripts/components/entities/commission-permanente.service.js"></script>
+<script src="scripts/components/entities/fonctionCommissionPermanente/fonctionCommissionPermanente.service.js"></script>
+<script src="scripts/components/entities/fonctionCommissionPermanente/fonctionCommissionPermanente.search.service.js"></script>
+<script src="scripts/components/entities/fonctionExecutive/fonctionExecutive.service.js"></script>
+<script src="scripts/components/entities/fonctionExecutive/fonctionExecutive.search.service.js"></script>
+<script src="scripts/components/entities/appartenanceCommissionPermanente/appartenanceCommissionPermanente.service.js"></script>
+<script src="scripts/components/entities/appartenanceCommissionPermanente/appartenanceCommissionPermanente.search.service.js"></script>
+<script src="scripts/app/entities/appartenanceCommissionPermanente/appartenanceCommissionPermanente-dialog.controller.js"></script>
+<script src="scripts/app/entities/fonctionCommissionPermanente/fonctionCommissionPermanente-dialog.controller.js"></script>
+<script src="scripts/app/entities/fonctionExecutive/fonctionExecutive-dialog.controller.js"></script>
+<script src="scripts/app/entities/appartenanceGroupePolitique/appartenanceGroupePolitique-dialog.controller.js"></script>
+<script src="scripts/app/entities/fonctionGroupePolitique/fonctionGroupePolitique-dialog.controller.js"></script>
+<script src="scripts/components/entities/fonctionGroupePolitique/fonctionGroupePolitique.service.js"></script>
+<script src="scripts/components/entities/fonctionGroupePolitique/fonctionGroupePolitique.search.service.js"></script>
+<script src="scripts/components/entities/appartenanceGroupePolitique/appartenanceGroupePolitique.service.js"></script>
+<script src="scripts/components/entities/appartenanceGroupePolitique/appartenanceGroupePolitique.search.service.js"></script>
+<script src="scripts/components/entities/commissionThematique/commissionThematique.service.js"></script>
+<script src="scripts/components/entities/commissionThematique/commissionThematique.search.service.js"></script>
+<script src="scripts/app/entities/commissionThematique/commissionThematique.js"></script>
+<script src="scripts/app/entities/commissionThematique/commissionThematique.controller.js"></script>
+<script src="scripts/app/entities/commissionThematique/commissionThematique-dialog.controller.js"></script>
+<script src="scripts/app/entities/commissionThematique/commissionThematique-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/commissionThematique/commissionThematique-detail.controller.js"></script>
+<script src="scripts/app/entities/appartenanceCommissionThematique/appartenanceCommissionThematique.js"></script>
+<script src="scripts/app/entities/appartenanceCommissionThematique/appartenanceCommissionThematique.controller.js"></script>
+<script src="scripts/app/entities/appartenanceCommissionThematique/appartenanceCommissionThematique-dialog.controller.js"></script>
+<script src="scripts/app/entities/appartenanceCommissionThematique/appartenanceCommissionThematique-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/appartenanceCommissionThematique/appartenanceCommissionThematique-detail.controller.js"></script>
+<script src="scripts/components/entities/appartenanceCommissionThematique/appartenanceCommissionThematique.service.js"></script>
+<script src="scripts/components/entities/appartenanceCommissionThematique/appartenanceCommissionThematique.search.service.js"></script>
+<script src="scripts/app/entities/fonctionCommissionThematique/fonctionCommissionThematique.js"></script>
+<script src="scripts/app/entities/fonctionCommissionThematique/fonctionCommissionThematique.controller.js"></script>
+<script src="scripts/app/entities/fonctionCommissionThematique/fonctionCommissionThematique-dialog.controller.js"></script>
+<script src="scripts/app/entities/fonctionCommissionThematique/fonctionCommissionThematique-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/fonctionCommissionThematique/fonctionCommissionThematique-detail.controller.js"></script>
+<script src="scripts/components/entities/fonctionCommissionThematique/fonctionCommissionThematique.service.js"></script>
+<script src="scripts/components/entities/fonctionCommissionThematique/fonctionCommissionThematique.search.service.js"></script>
+<script src="scripts/app/entities/upload/upload-image-dialog.controller.js"></script>
+<script src="scripts/app/entities/organisme/organisme.js"></script>
+<script src="scripts/app/entities/organisme/organisme.controller.js"></script>
+<script src="scripts/app/entities/organisme/organisme-dialog.controller.js"></script>
+<script src="scripts/app/entities/organisme/organisme-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/organisme/organisme-detail.controller.js"></script>
+<script src="scripts/components/entities/organisme/organisme.service.js"></script>
+<script src="scripts/components/entities/organisme/organisme.search.service.js"></script>
+<script src="scripts/app/entities/appartenanceOrganisme/appartenanceOrganisme.js"></script>
+<script src="scripts/app/entities/appartenanceOrganisme/appartenanceOrganisme.controller.js"></script>
+<script src="scripts/app/entities/appartenanceOrganisme/appartenanceOrganisme-dialog.controller.js"></script>
+<script src="scripts/app/entities/appartenanceOrganisme/appartenanceOrganisme-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/appartenanceOrganisme/appartenanceOrganisme-detail.controller.js"></script>
+<script src="scripts/components/entities/appartenanceOrganisme/appartenanceOrganisme.service.js"></script>
+<script src="scripts/components/entities/appartenanceOrganisme/appartenanceOrganisme.search.service.js"></script>
+<script src="scripts/app/entities/elu/elu.js"></script>
+<script src="scripts/app/entities/elu/elu.controller.js"></script>
+<script src="scripts/app/entities/elu/elu-dialog.controller.js"></script>
+<script src="scripts/app/entities/elu/elu-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/elu/elu-detail.controller.js"></script>
+<script src="scripts/app/entities/adressePostale/adressePostale-dialog.controller.js"></script>
+<script src="scripts/components/entities/adressePostale/adressePostale.service.js"></script>
+<script src="scripts/app/entities/adresseMail/adresseMail-dialog.controller.js"></script>
+<script src="scripts/app/entities/identiteInternet/identiteInternet-dialog.controller.js"></script>
+<script src="scripts/app/entities/numeroFax/numeroFax-dialog.controller.js"></script>
+<script src="scripts/app/entities/numeroTelephone/numeroTelephone-dialog.controller.js"></script>
+<script src="scripts/components/entities/adresseMail/adresseMail.service.js"></script>
+<script src="scripts/components/entities/identiteInternet/identiteInternet.service.js"></script>
+<script src="scripts/components/entities/numeroFax/numeroFax.service.js"></script>
+<script src="scripts/components/entities/numeroTelephone/numeroTelephone.service.js"></script>
+<script src="scripts/app/entities/seance/seance.js"></script>
+<script src="scripts/app/entities/seance/seance.controller.js"></script>
+<script src="scripts/app/entities/seance/seance-dialog.controller.js"></script>
+<script src="scripts/app/entities/seance/seance-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/seance/seance-detail.controller.js"></script>
+<script src="scripts/components/entities/seance/seance.service.js"></script>
+<script src="scripts/components/entities/seance/seance.search.service.js"></script>
+<script src="scripts/app/entities/pouvoir/pouvoir.js"></script>
+<script src="scripts/app/entities/pouvoir/pouvoir.controller.js"></script>
+<script src="scripts/app/entities/pouvoir/pouvoir-dialog.controller.js"></script>
+<script src="scripts/app/entities/pouvoir/pouvoir-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/pouvoir/pouvoir-detail.controller.js"></script>
+<script src="scripts/components/entities/pouvoir/pouvoir.service.js"></script>
+<script src="scripts/components/entities/pouvoir/pouvoir.search.service.js"></script>
+<script src="scripts/app/entities/auditTrail/auditTrail.js"></script>
+<script src="scripts/app/entities/auditTrail/auditTrail.controller.js"></script>
+<script src="scripts/app/entities/auditTrail/auditTrail-detail.controller.js"></script>
+<script src="scripts/components/entities/auditTrail/auditTrail.service.js"></script>
+<script src="scripts/components/entities/auditTrail/auditTrail.search.service.js"></script>
+<script src="scripts/app/entities/adressePostale/adressePostale-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/adresseMail/adresseMail-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/numeroFax/numeroFax-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/numeroTelephone/numeroTelephone-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/identiteInternet/identiteInternet-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/signature/signature.js"></script>
+<script src="scripts/app/entities/signature/signature.controller.js"></script>
+<script src="scripts/app/entities/signature/signature-dialog.controller.js"></script>
+<script src="scripts/app/entities/signature/signature-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/signature/signature-detail.controller.js"></script>
+<script src="scripts/components/entities/signature/signature.service.js"></script>
+<script src="scripts/components/entities/signature/signature.search.service.js"></script>
+<script src="scripts/app/entities/presenceElu/presenceElu.js"></script>
+<script src="scripts/app/entities/presenceElu/presenceElu.controller.js"></script>
+<script src="scripts/app/entities/presenceElu/presenceElu-dialog.controller.js"></script>
+<script src="scripts/app/entities/presenceElu/presenceElu-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/presenceElu/presenceElu-detail.controller.js"></script>
+<script src="scripts/components/entities/presenceElu/presenceElu.service.js"></script>
+<script src="scripts/components/entities/presenceElu/presenceElu.search.service.js"></script>
+<script src="scripts/app/entities/reunionCommissionThematique/reunionCommissionThematique.js"></script>
+<script src="scripts/app/entities/reunionCommissionThematique/reunionCommissionThematique.controller.js"></script>
+<script src="scripts/app/entities/reunionCommissionThematique/reunionCommissionThematique-dialog.controller.js"></script>
+<script src="scripts/app/entities/reunionCommissionThematique/reunionCommissionThematique-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/reunionCommissionThematique/reunionCommissionThematique-detail.controller.js"></script>
+<script src="scripts/components/entities/reunionCommissionThematique/reunionCommissionThematique.service.js"></script>
+<script src="scripts/components/entities/reunionCommissionThematique/reunionCommissionThematique.search.service.js"></script>
+<script src="scripts/app/entities/reunionCao/reunionCao.js"></script>
+<script src="scripts/app/entities/reunionCao/reunionCao.controller.js"></script>
+<script src="scripts/app/entities/reunionCao/reunionCao-dialog.controller.js"></script>
+<script src="scripts/app/entities/reunionCao/reunionCao-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/reunionCao/reunionCao-detail.controller.js"></script>
+<script src="scripts/components/entities/reunionCao/reunionCao.service.js"></script>
+<script src="scripts/components/entities/reunionCao/reunionCao.search.service.js"></script>
+<script src="scripts/app/entities/autreMandat/autreMandat.js"></script>
+<script src="scripts/app/entities/autreMandat/autreMandat.controller.js"></script>
+<script src="scripts/app/entities/autreMandat/autreMandat-dialog.controller.js"></script>
+<script src="scripts/app/entities/autreMandat/autreMandat-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/autreMandat/autreMandat-detail.controller.js"></script>
+<script src="scripts/components/entities/autreMandat/autreMandat.service.js"></script>
+<script src="scripts/components/entities/autreMandat/autreMandat.search.service.js"></script>
+<script src="scripts/app/entities/distinctionHonorifique/distinctionHonorifique.js"></script>
+<script src="scripts/app/entities/distinctionHonorifique/distinctionHonorifique.controller.js"></script>
+<script src="scripts/app/entities/distinctionHonorifique/distinctionHonorifique-dialog.controller.js"></script>
+<script src="scripts/app/entities/distinctionHonorifique/distinctionHonorifique-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/distinctionHonorifique/distinctionHonorifique-detail.controller.js"></script>
+<script src="scripts/components/entities/distinctionHonorifique/distinctionHonorifique.service.js"></script>
+<script src="scripts/components/entities/distinctionHonorifique/distinctionHonorifique.search.service.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>
